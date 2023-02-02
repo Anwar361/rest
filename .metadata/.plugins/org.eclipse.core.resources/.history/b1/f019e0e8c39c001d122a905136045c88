@@ -1,0 +1,56 @@
+package Basic;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class perfectNum {
+	//success
+	//sum of the fact=num 28 = 4+7+3
+	public static void charCount()
+	{
+		String str="success";
+		int count;
+		ArrayList<Character> ab=new ArrayList<Character>();
+		int []a= new int[str.length()];
+		char[] ch=str.toCharArray();
+		for(int i=0;i<str.length();i++)
+		{
+			count=0;
+			if(!ab.contains(ch[i]))
+			{
+				ab.add(ch[i]);
+				count++;
+			for(int j=i+1;j<str.length();j++)
+			{
+				if(ch[i]==ch[j])
+					count++;
+				a[i]=count;
+			}
+			System.out.println(ch[i]+" "+a[i]);
+			}
+		}
+		
+	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		Scanner sc=new Scanner(System.in);
+//		int num=sc.nextInt();
+//		int sum=0;
+//		for(int i=1;i<num;i++)
+//		{
+//			if(num%i==0)
+//				sum=sum+i;
+//		}
+//		if(sum==num)
+//			System.out.println("the num is perfect");
+//		else
+//			System.out.println("the num is not perfect");
+		perfectNum.charCount();
+
+	}
+
+}

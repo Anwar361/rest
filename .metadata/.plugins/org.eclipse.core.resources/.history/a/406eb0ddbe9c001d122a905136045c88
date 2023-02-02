@@ -1,0 +1,44 @@
+package Basic;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class perfectNum {
+	//success
+	//sum of the fact=num 28 = 4+7+3
+	public static void charCount()
+	{
+		String str="success";
+		Map<Character,Integer> map=new HashMap<Character,Integer>();
+		char[] ch=str.toCharArray();
+		for(char c:ch)
+		{
+			if(map.containsKey(c))
+				map.put(c, map.get(c)+1);
+			else
+				map.put(c,1);
+		}
+		System.out.println(map.values());
+	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		Scanner sc=new Scanner(System.in);
+//		int num=sc.nextInt();
+//		int sum=0;
+//		for(int i=1;i<num;i++)
+//		{
+//			if(num%i==0)
+//				sum=sum+i;
+//		}
+//		if(sum==num)
+//			System.out.println("the num is perfect");
+//		else
+//			System.out.println("the num is not perfect");
+		perfectNum.charCount();
+
+	}
+
+}

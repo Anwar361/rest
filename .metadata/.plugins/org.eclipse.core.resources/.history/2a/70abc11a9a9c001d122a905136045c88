@@ -1,0 +1,26 @@
+package Basic;
+
+import java.util.Scanner;
+
+public class perfectNum {
+	
+	//sum of the fact=num 28 = 4+7+3
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int num=sc.nextInt();
+		int sum=0;
+		for(int i=1;i<num;i++)
+		{
+			if(num%i==0)
+				sum=sum+i;
+		}
+		if(sum==num)
+			System.out.println("the num is perfect");
+		else
+			System.out.println("the num is not perfect");
+
+	}
+
+}

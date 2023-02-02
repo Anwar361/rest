@@ -1,0 +1,141 @@
+package Assignment1.Tests;
+
+import java.io.FileInputStream;
+import java.net.HttpURLConnection;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.time.Duration;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Properties;
+import java.util.Set;
+import java.util.function.Function;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.Proxy;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.aventstack.extentreports.reporter.ExtentReporter;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TestSelenium {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Properties prop=new Properties();
+		FileInputStream fis=new FileInputStream("Path");
+		prop.load(fis);
+		prop.getProperty(null);
+		prop.setProperty(null, null);
+		
+		ChromeOptions option=new ChromeOptions();
+		option.setAcceptInsecureCerts(true);
+		option.setExperimentalOption("ExecuteSwitch", "ArrayasList(Disable Popup blocking)");
+		
+		Proxy proxy=new Proxy();
+		proxy.setHttpProxy(null);
+		option.setCapability("Proxy", proxy);
+		
+		HashMap<String, String> map=new HashMap<String, String>();
+		map.put("Download Default directory", null);
+		option.setExperimentalOption("Map", map);
+		
+		System.setProperty("webdriver.chrome.driver", "");
+		//WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().deleteAllCookies();
+		driver.get("https://login.yahoo.com/");
+		driver.getCurrentUrl();
+		driver.navigate().to("https://www.google.com/");
+		driver.navigate().back();
+		//driver.navigate().forward();
+		//driver.navigate().relase();
+		driver.switchTo().alert().accept();
+		driver.switchTo().alert().dismiss();
+		driver.switchTo().frame(0);
+		driver.switchTo().defaultContent();
+		
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(null));
+		
+//		Wait<WebDriver> wait1=new FluentWait<WebDriver>(driver)
+//				.withTimeout(null).pollingEvery(null).ignoring(null);
+//		WebElement foo=wait1.until(new Function<WebDriver,WebElement>()
+//				public WebElement apply(WebDriver driver)
+//				{
+//					return driver.findElement(By.xpath(null));
+//				}
+//		);
+		
+		Actions act=new Actions(driver);
+		act.moveToElement(apply).doubleClick().build().perform();
+		act.dragAndDrop(foo, apply).contextClick().build().perform();
+		act.clickAndHold().moveToElement(apply).release().keyDown(Keys.SHIFT).build().perform();
+		String pa=Keys.chord(Keys.SHIFT,Keys.ENTER);
+		
+		Select drop=new Select(WebElement);
+		drop.selectByIndex(0);
+		drop.selectByValue(pa);
+		drop.selectByVisibleText(pa);
+		
+		Set<String> win=driver.getWindowHandles();
+		Iterator<String> it=win.iterator();
+		String parent=it.next();
+		String child=it.next();
+		driver.switchTo().window(parent);
+		
+		TakesScreenshot ts=(TakesScreenshot)driver;
+		File source=ts.getScreenshotAs(OutputType(File));
+		file target=new File();
+		FileUtils.copyFile(source, target);
+		
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("Window.Scroll.by(0,500)");
+		js.executeScript("argument[0]click()Element");
+		js.executeScript("document.getElementBy().value()");
+		js.executeScript("dom.executeQuery()");
+		
+		String url="";
+		HttpURLConnection con=(HttpURLConnection)new URL(url).openConnection();
+		con.setRequestMethod("HEAD");
+		con.connect();
+		con.getResponseCode();
+		
+		Connection con=DriverManager.getConnection(url);
+		Statement s =con.createStatement();
+		ResultSet rs=s.executeQuery(url);
+		
+		ExtentSparkReporter repoter=new ExtentSparkReporter();
+		reporter.config.setRepoterName();
+		reporter.config.setDocumentName();
+		ExtentReporter extent=new ExtentReporter();
+		extent.attachReporter();
+		extent.setSystemInfo();
+		
+		String jsonData=FileUtils.readFileToString(new File());
+		ObjectMapper mapper=new ObjectMapper();
+		List<HashMap<String,String>> list=mapper.readValue(jsonData, new TypeReference<List<HashMap<String,String>>>());
+		
+		
+		
+	}
+
+}

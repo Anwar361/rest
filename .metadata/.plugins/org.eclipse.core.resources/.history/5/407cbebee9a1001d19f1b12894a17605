@@ -1,0 +1,19 @@
+package Basic;
+
+class A{
+	public void hi() {
+		System.out.println("Hi this is class A");
+	}
+}
+public class Testit extends A {
+	public void hi() {
+		System.out.println("Hi this is class Testit");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		A ob=new A();
+		ob.hi();
+	}
+
+}

@@ -1,0 +1,18 @@
+package Basic;
+
+import AddPlace.Payload;
+import io.restassured.path.json.JsonPath;
+
+public class jsonPasrsing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JsonPath js=new JsonPath(Payload.costPrice());
+		System.out.println(js.getInt("courses.size()"));
+		
+		System.out.println(js.getInt("dashboard.purchaseAmount"));
+				
+
+	}
+
+}

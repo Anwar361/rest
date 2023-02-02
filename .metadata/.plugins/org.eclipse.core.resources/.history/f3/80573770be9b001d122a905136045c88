@@ -1,0 +1,119 @@
+package Assignment1.Tests;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Programing1 {
+	
+	public static void duplicate()
+	{
+		String[] str= {"ab","bc","cd","ab","bc"};
+		Set<String> st=new HashSet<String>();
+		for(String s: str)
+		{
+			if(st.add(s)==false)
+				System.out.println(" "+st);
+		}
+	}
+	
+	public static void numCount()
+	{
+		int[] a = {1,2,3,4,5,6,3,4,2,5};
+		ArrayList<Integer> num=new ArrayList<Integer>();
+		int k;
+		for(int i=0;i<a.length;i++)
+		{
+			k=0;
+			if(!num.contains(a[i]))
+			{
+				num.add(a[i]);
+				k++;
+				for(int j=i+1;j<a.length;j++)
+				{
+					if(a[i]==a[j])
+						k++;
+				}
+				System.out.println("/"+a[i]+"-"+k);
+			}
+			//System.out.println(""+a[i]);
+		}
+	}
+	public static void charCount()
+	{
+		String str="this is my first program";
+		Map<Character,Integer> map=new HashMap<Character,Integer>();
+		char ch[]=str.toCharArray();
+		for(char c:ch)
+		{
+			if(map.containsKey(c))
+				map.put(c, map.get(c)+1);
+			else
+				map.put(c, 1);
+		}
+		System.out.println(map);
+	}
+	
+	public static int fact(int n)
+	{
+		if(n==0||n==1)
+			return 1;
+		return n*fact(n-1);		
+	}
+	public static void pyramids()
+	{
+		for(int i=1;i<5;i++)
+		{
+			for(int k=5;k>i;k--)
+			{
+				System.out.print(" ");
+			}
+			for(int j=1;j<i*2;j++)
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+	public static void rev()
+	{
+		Scanner sc=new Scanner(System.in);
+		String str=sc.nextLine();
+		String rev="";
+		for(int i=str.length()-1;i>=0;i++)
+		{
+			rev=rev+str.charAt(i);
+		}
+		System.out.println();
+	}
+	public static void prime(int num)
+	{
+		int count=0;
+		for(int i=2;i<num;i++)
+		{
+			if(num%i==0)
+				count++;
+		}
+		if(count<1)
+			System.out.println("is prime");
+		else
+			System.out.println("is not prime");
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//Programing1 pro=new Programing1();
+		Programing1.duplicate();
+		Programing1.numCount();
+		Programing1.charCount();
+		Programing1.fact(5);
+		Programing1.pyramids();
+		Programing1.rev();
+		Programing1.prime(56);
+	}
+
+}

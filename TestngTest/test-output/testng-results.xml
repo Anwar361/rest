@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-09-09T15:00:30 IST" name="Default suite" finished-at="2022-09-09T15:00:35 IST" duration-ms="5032">
+    <groups>
+    </groups>
+    <test started-at="2022-09-09T15:00:30 IST" name="Default test" finished-at="2022-09-09T15:00:35 IST" duration-ms="5032">
+      <class name="Test1.Math2">
+        <test-method is-config="true" signature="pa()[pri:0, instance:Test1.Math2@41e1e210]" started-at="2022-09-09T15:00:30 IST" name="pa" finished-at="2022-09-09T15:00:30 IST" duration-ms="38" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pa -->
+        <test-method signature="m4()[pri:0, instance:Test1.Math2@41e1e210]" started-at="2022-09-09T15:00:30 IST" name="m4" finished-at="2022-09-09T15:00:31 IST" duration-ms="21" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- m4 -->
+        <test-method signature="m3()[pri:0, instance:Test1.Math2@41e1e210]" started-at="2022-09-09T15:00:31 IST" name="m3" finished-at="2022-09-09T15:00:31 IST" depends-on-methods="Test1.Math2.m4" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- m3 -->
+        <test-method is-config="true" signature="ae()[pri:0, instance:Test1.Math2@41e1e210]" started-at="2022-09-09T15:00:31 IST" name="ae" finished-at="2022-09-09T15:00:35 IST" duration-ms="4822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ae -->
+      </class> <!-- Test1.Math2 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

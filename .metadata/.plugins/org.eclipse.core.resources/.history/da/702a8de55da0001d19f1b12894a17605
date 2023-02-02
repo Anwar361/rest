@@ -1,0 +1,36 @@
+package Basic;
+
+import org.testng.Assert;
+
+import AddPlace.Payload;
+import io.restassured.path.json.JsonPath;
+
+public class jsonPasrsing {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JsonPath js=new JsonPath(Payload.costPrice());
+		System.out.println(js.getInt("courses.size()"));
+		
+		int total=js.getInt("dashboard.purchaseAmount");
+		int price=0;
+		int copies=0;
+		int amount=0;
+		int sum=0;
+		
+		for(int i=0;i<3;i++)
+		{
+			System.out.println(js.getString("courses["+i+"].title"));
+			System.out.println(js.getInt("courses["+i+"].price"));
+			price=js.getInt("courses["+i+"].price");
+			System.out.println(js.getInt("courses["+i+"].copies"));
+			copies=js.getInt("courses["+i+"].copies");
+			amount=price*copies;
+			sum+= amount;		
+		}
+		System.out.println("Total purcchase Amount "+sum);
+		Assert.assertEquals(sum, price);
+
+	}
+
+}
